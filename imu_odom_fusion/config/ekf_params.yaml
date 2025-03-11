@@ -1,0 +1,22 @@
+ekf_filter_node:
+  ros__parameters:
+    frequency: 50.0  # The rate at which the filter runs
+    two_d_mode: true  # Enforce 2D mode (ignores z, roll, and pitch)
+    publish_tf: true  # Publishes odom->base_link transform
+
+    # Odometry from wheel encoders
+    odom0: /odom
+    odom0_config: [true, true, false,   # x, y, z (z is false for 2D)
+                   false, false, true,  # roll, pitch, yaw
+                   true, true, false,   # vx, vy, vz
+                   false, false, true]  # vroll, vpitch, vyaw
+
+    # IMU Data
+    imu0: /imu
+    imu0_config: [false, false, false,  # x, y, z
+                  true, true, true,   # roll, pitch, yaw
+                  false, false, false,  # vx, vy, vz
+                  true, true, true]   # vroll, vpitch, vyaw
+
+    imu0_differential: true  # Makes yaw readings relative
+    use_control: false

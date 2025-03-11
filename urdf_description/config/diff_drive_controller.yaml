@@ -1,0 +1,20 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 10
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    diff_drive_controller:
+      type: "diff_drive_controller/DiffDriveController"
+    
+diff_drive_controller:
+  ros__parameters:
+    
+    left_wheel_names: ["motor_left_to_left_rim"]
+    right_wheel_names: ["motor_right_to_right_rim"]
+    wheel_separation: 0.265
+    wheel_radius: 0.0325
+    cmd_vel_timeout: 0.5
+    velocity_command_interface: "velocity"
+    state_interface: "velocity"

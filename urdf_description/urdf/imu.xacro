@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot name="urdfbot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:property name="scl" value="0.001"/>
+  <xacro:property name="PI" value="3.14159265335897931" />
+
+  <link name="imu" type="imu">
+    <visual>
+      <origin xyz="0 0 -0.005" rpy="0 0 ${PI/2}"/>
+      <geometry>
+        <mesh filename="file://$(find urdf_description)/meshes/obj/imu_and_holder.obj" scale="${scl} ${scl} ${scl}"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.005" rpy="0 0 ${PI/2}"/>
+      <geometry>
+        <mesh filename="file://$(find urdf_description)/meshes/obj/imu_and_holder.obj" scale="${scl} ${scl} ${scl}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+    </inertial>
+  </link>
+
+  <joint name="base_link_to_imu" type="fixed">
+    <origin xyz="0 0 0.005" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="imu"/>
+  </joint>
+
+  <gazebo reference="imu">
+    <!-- <material>Gazebo/Yellow</material> -->
+    <sensor name="imu_sensor" type="imu">
+      <always_on>1</always_on>
+      <update_rate>1</update_rate>
+      <visualize>true</visualize>
+      <topic>imu</topic>
+    </sensor>
+  </gazebo>
+
+</robot>

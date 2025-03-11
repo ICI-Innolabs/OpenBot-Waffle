@@ -1,0 +1,3 @@
+bno055_driver:
+  ros__parameters:
+    imu_topic: "imu"

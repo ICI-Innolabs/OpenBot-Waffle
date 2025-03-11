@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<robot name="urdfbot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:property name="PI" value="3.14159265335897931" />
+  <xacro:property name="scl" value="0.001"/>
+
+  <material name="black">
+    <color rgba="0.01 0.01 0.01 1"/>
+  </material>
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+  <material name="gray">
+    <color rgba="0.7 0.7 0.7 1"/>
+  </material>
+  <material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
+  <material name="orange">
+    <color rgba="1 0.2 0 1"/>
+  </material>
+  <material name="green">
+    <color rgba="0 1 0 1"/>
+  </material>
+  <material name="yellow">
+    <color rgba="1 0.8 0 1"/>
+  </material>
+
+  <xacro:include filename="robot_core.xacro"/>
+
+  <xacro:include filename="diff_drive_control.xacro"/>
+  <xacro:include filename="lidar.xacro"/>
+  <xacro:include filename="imu.xacro"/>
+  <xacro:include filename="depth_camera.xacro"/>
+
+</robot>

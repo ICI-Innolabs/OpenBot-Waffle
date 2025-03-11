@@ -1,0 +1,6 @@
+rplidar_ros:
+  ros__parameters:
+    serial_port: "/dev/ttyUSB1"
+    frame_id: "laser_frame"
+    angle_compensate: True
+    scan_mode: "Standard"
