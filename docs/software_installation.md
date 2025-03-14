@@ -56,19 +56,36 @@ cat /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
 ```
 - After configuring the motors, connect them to the U2D2 module and connect the U2D2 module to the Raspberry Pi and test the motors. If the motors aren't operating as expected use the python scripts from the `extra/test_motors` folder to identify the issue.
 
-
-
 ## Extra - ROS2 Jazzy Installation with Docker
 
 - If you don't have a machine with Ubuntu 24.04, you can use Docker to create a container with ROS2 Jazzy.
-- After installing docker clone follow this [guide](https://docs.ros.org/en/jazzy/How-To-Guides/Installing-on-Raspberry-Pi.html)
+- After installing docker you can follow this [guide](https://docs.ros.org/en/jazzy/How-To-Guides/Installing-on-Raspberry-Pi.html)
 
 
 
-# FOR D435I Depth camera
+# For D435I Depth camera
 
-- to get both lidar and depth camera working. firstly launch robot launch (withouth the depth camera plugged in) then plug in depth camera and launch d435i node with:
+- Since we are using a custom power supply for the Raspberry Pi, by default the USB ports are limited to 0.6A. To increase the current limit to 1.6A run the following command:
+```
+sudo nano /boot/firmware/config.txt
+```
+- And add the following line at the end of the file:
+```
+usb_max_current_enable=1
+```
+- After adding the line, save the file by pressing `Ctrl + X`, then `Y` and then `Enter` and reboot the Raspberry Pi by running the following command:
+```
+sudo reboot
+```
+
+<!-- - to get both lidar and depth camera working. firstly launch robot launch (withouth the depth camera plugged in) then plug in depth camera and launch d435i node with: -->
+
+
+- To publish the depth image from the D435I camera run the following command:
 ```
 ros2 run realsense2_camera realsense2_camera_node
 ```
- - useful links: https://github.com/IntelRealSense/realsense-ros and https://dev.intelrealsense.com/docs/ros2-pointcloud-examples
+
+- In RVIZ2 you can visualize the depth image by adding a new image topic and selecting the `/camera/camera/depth/image_rect_raw` topic.
+
+- useful links: https://github.com/IntelRealSense/realsense-ros and https://dev.intelrealsense.com/docs/ros2-pointcloud-examples

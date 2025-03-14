@@ -46,6 +46,21 @@ ros2 topic pub /cmd_vel geometry_msgs/msg/TwistStamped '{
 }'
 ```
 
+## Joystick Teleoperation
+
+Teleoperation can also be done using a joystick. To start teleoperating the robot with a joystick, run the following command in your terminal:
+
+```
+ros2 launch urdf_description diff_drive_control.xacro
+```
+
+When the node starts, use your joystick to control the robot. The robot will move according to the left joystick and if you want to move the robot faster (boost mode) you can press R2 button.
+
+This node is inspired from Articulated Robotics. 
+ - [Youtube Video](https://www.youtube.com/watch?v=F5XlNiCKbrY)
+ - [Github Repository](https://github.com/joshnewans/articubot_one/tree/174b3f311ab146ef12c6549ad0640cb985854972)
+
+
 ## Main packeges 
 
 When running the robot launch file, the following nodes are launched:

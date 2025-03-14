@@ -42,23 +42,34 @@ If you are printing each parts individually use the next table to know the quant
  - Attach depth holder A and B with a screw and nut then fix the depth camera to the holder.
  - Attach the Lidar to the lidar holder.
 
- ## Step 2 - Fix the holders (with the components) to the base parts
- 
- - Both for base0 and base1, to fix the parts in the exact position refer to the [3D model of the robot](https://cad.onshape.com/documents/e4455d89093a44267b1c8add/w/d262dbe7157cadda162aa249/e/e17b02729e8f8845fbf66276?renderMode=0&uiState=67bee99083113e444bfba18f)
- - Using 3mm screws and nuts fix the motors, imu, battery holder and u2d2 module to the base0 part.
+## Step 2 - Fix the components on the bottom base plate
+
+ - Both for base0 and base1, to fix the parts in the exact position, refer to the [3D model of the robot](https://cad.onshape.com/documents/e4455d89093a44267b1c8add/w/d262dbe7157cadda162aa249/e/e17b02729e8f8845fbf66276?renderMode=0&uiState=67bee99083113e444bfba18f)
+ - Using 3mm screws and nuts fix the motors, imu (before fixing it attach 4 cables to its VCC, SCL, SDA and GND pins), battery holder and u2d2 module to the base0 part.
+ - Connect the motors to the U2D2 module, in the next image you can see how the Dynamixel motors are wired to the U2D2 module. Leave a USB cable connected to the U2D2 module that later will be connected to the Raspberry Pi.
+    <img src="media/assembly/Motors.jpg" width="1200">
  - Glue the 5V 5A step down module to the base0 part.
+ - Use zip ties to fix the cables to the plate.
+ - Connect the battery holder to the 5V 5A step down module and to the U2D2 module. Leave an USB to Type C cablle connected to the 5V 5A step down module that later will power the Raspberry Pi. <!-- For this wiring you can use the next image as reference.
+    <!-- # TO ADD IMAGE
+     <img src="media/assembly/5V5A.jpg" width="1200"> --> 
  - Using 3mm screws and nuts fix the two caster wheels and six spacers to the base0 part.
- - Screw on the base1 part the depth camera and lidar. 
+ - After fixing all the components on the bottom plate, it should look like this:
+    <img src="media/assembly/bottom.jpg" width="1200">
+
+## Step 3 - Assemble the top plate of the robot
+
+ - Screw on the base1 part the depth camera and lidar.
  - Fix on the base1 the raspberry pi holder then fix the raspberry pi to the holder.
- - Using 3mm screws and nuts fix on the base0 part six spacers.
+ - Use zip ties to fix the cables from the lidar and depth camera to the plate.
+ - Connect the Lidar and Depth camera to the Raspberry Pi via USB.
+ - In the next image you can see how the top plate of the robot should look like.
+    <img src="media/assembly/Top.jpg" width="1200">  
 
- ## Step 3 - Assemble the robot, connect the components and cable management
+ ## Step 4 - Assemble the robot by connecting the top and bottom plates via the spacers
 
- - Connect the motors to the U2D2 module.
- - Connect the battery to the 5V 5A step down module and U2D2 module
+ - Connect the base0 part to the base1 part with screws and nuts via the spacers. Pass the arduino cables (for the IMU) and the Type C cable through the hole of the base1 part (the hole under the lidar). Pass the cable from the U2D2 module through the hole of the base1 part (the hole next to the Raspberry Pi USB ports).
  - Connect the IMU to the Raspberry Pi following the next image. Use the hole from the upper base to pass the cables.
- <img src="media/imu_pi5.png" width="900">
- - Power the Raspberry Pi from the 5V 5A step down module with a USB type C cable. (pass the cable through the hole from the upper base)
- - Connect the Lidar, Depth camera and U2D2 module to the Raspberry Pi via USB.
- - Connect the base1 part to the base0 part with screws and nuts via the spacers.
+ <img src="media/imu_pi5.png" width="1200">
+ - Connect the U2D2 module to the Raspberry Pi via USB.
 
