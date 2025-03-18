@@ -1,8 +1,12 @@
 ekf_filter_node:
   ros__parameters:
-    frequency: 50.0  # The rate at which the filter runs
+    frequency: 30.0  # The rate at which the filter runs
     two_d_mode: true  # Enforce 2D mode (ignores z, roll, and pitch)
     publish_tf: true  # Publishes odom->base_link transform
+
+    odom_frame: "odom"   # <--- ADD THIS!
+    base_link_frame: "base_link"
+    world_frame: "odom"
 
     # Odometry from wheel encoders
     odom0: /odom

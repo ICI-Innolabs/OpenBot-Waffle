@@ -1,0 +1,23 @@
+nav_to_room:
+  ros__parameters:
+    spt1:
+      position:
+        position_x: -0.7820139463020799
+        position_y: 2.015340288594391
+      orientation:
+        orientation_z: -0.3973280303961455
+        orientation_w: 0.9176766512565958
+    iotlab:
+      position:
+        position_x: -0.7820139463020799
+        position_y: 2.015340288594391
+      orientation:
+        orientation_z: -0.3973280303961455
+        orientation_w: 0.9176766512565958
+    iot_annex:
+      position:
+        position_x: -0.9128478146339513
+        position_y: 2.0536498064113884
+      orientation:
+        orientation_z: -0.7335937072001073
+        orientation_w: 0.6795883112270276

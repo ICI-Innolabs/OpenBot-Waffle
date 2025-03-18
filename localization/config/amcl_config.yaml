@@ -20,7 +20,7 @@ amcl:
     max_beams: 60
     max_particles: 8000
     min_particles: 200
-    odom_frame_id: "odom" # "odometry/filtered"
+    odom_frame_id: odom 
     pf_err: 0.05
     pf_z: 0.99
     recovery_alpha_fast: 0.0
