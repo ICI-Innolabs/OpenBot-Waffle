@@ -1,12 +1,38 @@
-# OPENBOT Waffle
+# Welcome to the OpenBot Waffle repository!
 
-<img src="docs/media/icibot_waffle.jpeg" alt="ICIBot Waffle" width="600">
+<img src="docs/media/openbot_waffle.JPG" alt="ICIBot Waffle" width="800">
+
+OpenBot Waffle is a ROS2-based robot platform that can be used for research, education, and hobby purposes. The robot is built around ROS2 and uses a Raspberry Pi 5 as the main controller. The robot is equipped with a Dynamixel XL430-W250-T motor, a Slamtec A1 Lidar, an Adafruit BNO055 IMU, and an Intel RealSense D435i depth camera. The structure of the robot is 3D printed and can be easily assembled. To make things easier when trying new things, the robot can be simulated in Gazebo.
+
+Out of the box, the robot can be controlled via a keyboard or joystick. Also it can also perform SLAM (Simultaneous Localization and Mapping) using Nav2 package from ROS2. 
 
 ## 3D Preview
 
 To preview the 3D model of the robot, you can use the following link: [OpenBot Waffle 3D Preview](https://cad.onshape.com/documents/e4455d89093a44267b1c8add/w/d262dbe7157cadda162aa249/e/e17b02729e8f8845fbf66276?renderMode=0&uiState=67bee99083113e444bfba18b)
 
-## Packages description:
+# Instructions
+
+## Printing and Assembly
+
+To build the OpenBot Waffle robot, you will need to 3D print the components and assemble them. The components list can be found here: [List of Components Needed to Build OpenBot Waffle](docs/component_list.md). The 3D printing and assembly instructions can be found here: [Printing and Assembling Instructions for OpenBot Waffle](docs/3d_printing.md).
+
+## Installation
+
+- After building the physical robot, you will need to install the software on the Raspberry Pi 5. The software installation instructions can be found here: [Software Installation Instructions for OpenBot Waffle](docs/software_installation.md).
+
+- If you are new to ROS2 we recommend you to take a look at the basic instructions here: [ROS2 Basic Instructions](docs/ros2_basic.md).
+
+- When you have ROS2 installed proceed with the next intructions to learn how to launch the robot's main packages and teleoperate the robot: [OpenBot Waffle Basics](docs/teleoperation.md).
+
+## SLAM and Navigation
+
+- To perform SLAM (Simultaneous Localization and Mapping) and start navigation with the robot, you can follow the instructions here: [SLAM and Navigation with OpenBot Waffle](docs/slam_navigation.md).
+
+## Gazeebo Simulation
+
+- The robot can be simulated in Gazebo. To simulate the robot in Gazebo, you can follow the instructions here: [Gazebo Simulation for OpenBot Waffle](docs/gazebo_simulation.md).
+
+## Preview of the main packages:
 
 ### BNO055_Driver
  - package cloned from https://github.com/the-hive-lab/bno055_driver 
@@ -57,19 +83,6 @@ To preview the 3D model of the robot, you can use the following link: [OpenBot W
 ### openbot_waffle_gazebo
  - package that contains the launch file to run the gazebo simulation
  - to run the gazebo simulation: ``` ros2 launch openbot_waffle_gazebo robot_description_gazebo.launch.py ```
-
-## Instructions
-
-- the components list can be be found here: [List of Components Needed to Build OpenBot Waffle](docs/component_list.md)
-- the 3D printing and assembly instructions can be found here: [Printing and Assembling Instructions for OpenBot Waffle](docs/3d_printing.md)
-- the software installation instructions can be found here: [Software Installation Instructions for OpenBot Waffle](docs/software_installation.md)
-- basic ros2 intructions can be found here: [ROS2 Basic Instructions](docs/ros2_basic.md)
-
-## Demo Usage
-
-- robot control, teleoperation and main packages: [Teleoperation for OpenBot Waffle](docs/teleoperation.md)
-- gazebo simulation: [Gazebo Simulation for OpenBot Waffle](docs/gazebo_simulation.md)
-- slam (mapping, localization and path planning): [SLAM for OpenBot Waffle](docs/slam.md)
 
 # License
 

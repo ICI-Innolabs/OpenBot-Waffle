@@ -5,8 +5,16 @@ from launch.substitutions import Command
 import launch_ros.actions
 from launch.actions import TimerAction
 
+from launch.actions import OpaqueFunction
+from launch.substitutions import LaunchConfiguration
+import sys
+import pathlib
 
 import os
+
+sys.path.append(str(pathlib.Path(__file__).parent.absolute()))
+sys.path.append(os.path.join(get_package_share_directory('realsense2_camera'), 'launch'))
+import rs_launch
 
 def generate_launch_description():
     urdf_file = 'urdf_robot.urdf'
@@ -91,13 +99,43 @@ def generate_launch_description():
         actions = [ekf_node]
     )
 
+    local_parameters = [
+    {'name': 'camera_name', 'default': 'camera', 'description': 'camera unique name'},
+    {'name': 'camera_namespace', 'default': 'camera', 'description': 'camera namespace'},
+    {'name': 'config_file', 'default': os.path.join(get_package_share_directory('urdf_description'), 'config', 'dcamera_params.yaml'), 'description': 'yaml config file'},
+    ]
+
+    def set_configurable_parameters(local_params):
+        return dict([(param['name'], LaunchConfiguration(param['name'])) for param in local_params])
+
+    tf_publisher_node = Node(
+        package='tf2_ros',
+        executable='static_transform_publisher',
+        arguments=['0', '0', '0', '-1.5708', '0', '-1.5708', 'dcamera_link', 'camera_depth_optical_frame'],
+        output='screen'
+    )
+
+    delayed_tf_node = TimerAction(
+        period=5.0,
+        actions=[
+            tf_publisher_node
+        ]
+    )
     
-    return LaunchDescription([
-        controller_manager_node,
-        # rsp_node,
-        diff_drive_spawner,
-        joint_broad_spawner,
-        imu_node,
-        delayed_lidar,
-        delayed_ekf
-    ])
+    params = rs_launch.configurable_parameters
+    
+    return LaunchDescription(
+        rs_launch.declare_configurable_parameters(local_parameters) +
+        rs_launch.declare_configurable_parameters(params) +
+        [
+            controller_manager_node,
+            # rsp_node,
+            diff_drive_spawner,
+            joint_broad_spawner,
+            imu_node,
+            delayed_lidar,
+            delayed_ekf,
+            OpaqueFunction(function=rs_launch.launch_setup, kwargs={'params': set_configurable_parameters(params)}),
+            delayed_tf_node
+        ]
+    )

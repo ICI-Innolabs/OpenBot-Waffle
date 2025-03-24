@@ -1,0 +1,7 @@
+enable_color: true
+enable_depth: true
+pointcloud.enable: true
+rgb_camera.color_profile: 320x240x6
+depth_module.depth_profile: 480x270x15
+align_depth.enable: true
+publish_tf: false
