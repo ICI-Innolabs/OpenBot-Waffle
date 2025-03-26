@@ -26,7 +26,7 @@ To build the OpenBot Waffle robot, you will need to 3D print the components and 
 
 ## SLAM and Navigation
 
-- To perform SLAM (Simultaneous Localization and Mapping) and start navigation with the robot, you can follow the instructions here: [SLAM and Navigation with OpenBot Waffle](docs/slam_navigation.md).
+- To perform SLAM (Simultaneous Localization and Mapping) and start navigation with the robot, you can follow the instructions here: [SLAM and Navigation with OpenBot Waffle](docs/slam.md).
 
 ## Gazeebo Simulation
 
