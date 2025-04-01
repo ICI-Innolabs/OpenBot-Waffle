@@ -1,3 +1,5 @@
+enable_rgbd: true
+enable_sync: true
 enable_color: true
 enable_depth: true
 pointcloud.enable: true

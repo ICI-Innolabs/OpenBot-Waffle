@@ -50,9 +50,9 @@ If you are printing each parts individually use the next table to know the quant
     <img src="media/assembly/Motors.jpg" width="1200">
  - Glue the 5V 5A step down module to the base0 part.
  - Use zip ties to fix the cables to the plate.
- - Connect the battery holder to the 5V 5A step down module and to the U2D2 module. Leave an USB to Type C cablle connected to the 5V 5A step down module that later will power the Raspberry Pi. <!-- For this wiring you can use the next image as reference.
-    <!-- # TO ADD IMAGE
-     <img src="media/assembly/5V5A.jpg" width="1200"> --> 
+ - Connect the battery holder to the 5V 5A step down module and to the U2D2 module. Leave an USB to Type C cablle connected to the 5V 5A step down module that later will power the Raspberry Pi. 
+ - Make sure that the U2D2 module is powered directly from the battery since it needs 12 V to operate. If you power it from the 5V 5A step down module, it won't work.
+
  - Using 3mm screws and nuts fix the two caster wheels and six spacers to the base0 part.
  - After fixing all the components on the bottom plate, it should look like this:
     <img src="media/assembly/bottom.jpg" width="1200">
@@ -73,3 +73,6 @@ If you are printing each parts individually use the next table to know the quant
  <img src="media/imu_pi5.png" width="1200">
  - Connect the U2D2 module to the Raspberry Pi via USB.
 
+## Extra
+
+ - When you are not using the robot, do not forget to remove the type C cable that powers it (even if you've turned off the raspberry pi). If you leave it connected, the battery will be drained in a few days (or even hours).  

@@ -1,0 +1,5 @@
+adafruit-circuitpython-bno055==5.4.18
+RPi.GPIO==0.7.1
+dynamixel-sdk==3.7.31
+lgpio
+board
