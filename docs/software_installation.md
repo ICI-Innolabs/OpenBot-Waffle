@@ -6,7 +6,7 @@
 - To install Ubuntu 24.04 on the Raspberry Pi 5, get a new SD card (at least 32 GB), and flash it with Ubuntu using the [Raspberry Pi imager](https://www.raspberrypi.com/software/). After flashing the SD card, insert it into the Raspberry Pi and boot it up. Follow the instructions to set up the Raspberry Pi and proceed with the [installation of ROS2 Jazzy](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html).
 - After installing ROS2 Jazzy, clone the OpenBot Waffle repository to your workspace with the following command:
 ```
-git clone https://gogs.innolabs.ro/bogdan2435/openbot_waffle -b main
+git clone https://github.com/ICI-Innolabs/OpenBot-Waffle.git -b main
 ```
 <!-- - After cloning the repository, also clone the repositories for IMU unit and Dynamixel motors (make sure you clone the jazzy branch) in the `src` folder of your workspace:
 ```
